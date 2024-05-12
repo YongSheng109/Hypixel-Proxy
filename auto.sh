@@ -10,6 +10,8 @@ apt install screen -y > /dev/null 2>&1
 pip3 install bpytop > /dev/null 2>&1
 apt install jq -y > /dev/null 2>&1
 
+screen -ls | grep -o '[0-9]*\.[a-zA-Z0-9]*' | while read -r line; do screen -S "$line" -X quit; done
+rm proxy -rf
 mkdir proxy && cd proxy
 
 wget https://github.com/YongSheng109/temp/raw/main/ngrok-v3-stable-linux-amd64.tgz > /dev/null 2>&1
