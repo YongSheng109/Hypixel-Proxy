@@ -10,7 +10,7 @@ apt install screen -y > /dev/null 2>&1
 pip3 install bpytop > /dev/null 2>&1
 apt install jq -y > /dev/null 2>&1
 
-screen -ls | grep -o '[0-9]*\.[a-zA-Z0-9]*' | while read -r line; do screen -S "$line" -X quit; done
+pkill screen
 rm proxy -rf
 mkdir proxy && cd proxy
 
