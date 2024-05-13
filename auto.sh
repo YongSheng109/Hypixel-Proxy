@@ -22,7 +22,7 @@ chmod 777 *
 
 ngrok config add-authtoken $NGROK_AUTH_TOKEN > /dev/null 2>&1
 
-screen -S proxy -d -m ./proxy
+screen -S proxy -d -m ./proxy/proxy
 screen -S ngrok -d -m ngrok tcp 25565
 screen -S afk -d -m bpytop
 
