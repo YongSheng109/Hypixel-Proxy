@@ -11,7 +11,7 @@ pip3 install bpytop > /dev/null 2>&1
 apt install jq -y > /dev/null 2>&1
 
 pkill screen
-rm proxy -rf
+rm proxy -r
 mkdir proxy && cd proxy
 
 wget https://github.com/YongSheng109/temp/raw/main/ngrok-v3-stable-linux-amd64.tgz > /dev/null 2>&1
@@ -22,7 +22,7 @@ chmod 777 *
 
 ngrok config add-authtoken $NGROK_AUTH_TOKEN > /dev/null 2>&1
 
-screen -S proxy -d -m ./proxy/proxy
+screen -S proxy -d -m ./proxy
 screen -S ngrok -d -m ngrok tcp 25565
 screen -S afk -d -m bpytop
 
